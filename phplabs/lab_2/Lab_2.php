@@ -12,6 +12,7 @@
         //validate input feilds
             //if errors show error msg
         //if validated show msg
+        //session_start();
         $NameCheck=false;
         $EmailCheck=false;
         $MessageCheck=false;
@@ -54,6 +55,7 @@
             }
 
         }
+
         
 
         ?>
