@@ -41,7 +41,7 @@ foreach ($json as $city)
 if (isset($_POST["submit"]))
 {
     $selectedCityID = $_POST['Cities'];
-    $apiKey = "80af165ca25a56c46022fb10799b3a1a";
+    $apiKey = "keyValue";
     $apiLink = "http://api.openweathermap.org/data/2.5/weather?id=$selectedCityID&appid=$apiKey";
     $ch=curl_init();
     curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
