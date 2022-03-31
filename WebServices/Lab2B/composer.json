@@ -1,0 +1,16 @@
+{
+  "name": "api/crudapi",
+  "description": "CRUD Api",
+  "license": "MIT",
+  "require": {
+    "illuminate/database": "*"
+  },
+  "autoload": {
+    "classmap": [
+      "Model"
+    ],
+    "files": [
+      "Config/config.php"
+    ]
+  }
+}
