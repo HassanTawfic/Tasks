@@ -9,26 +9,30 @@ http.createServer(function (req, res){
         let usersJSON = fs.readFileSync('./data.json','utf-8')
         let users = JSON.parse(usersJSON)
         const queryObject = url.parse(req.url, true).query;
-        let found = users.find(function(user){
+        users.find(function(user){
 
             if(user.email==queryObject.email && user.password==queryObject.password)
             {
                 res.writeHead(200,{
                     'Location': '127.0.0.1:3000/profile'
-                    
+
                 })
                 res.write('Hello ' + user.name)
+                return 0;
                 
             }
             else if(user.email==queryObject.email && user.password!=queryObject.password){
                 res.writeHead(400)
                 res.write('you entered wrong password')
+                return 0;
             }else if(user.email=!queryObject.email && user.password==queryObject.password){
                 res.writeHead(400)
                 res.write('you entered wrong email')
+                return 0;
             }else{
                 res.writeHead(400)
-                res.write('you entered email doesn’t exist please signup')
+                res.write('you entered email does not exist please signup')
+                return 0;
             }
         })
     }
