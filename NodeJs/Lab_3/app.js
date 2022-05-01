@@ -5,19 +5,32 @@ http.createServer(function (req, res){
     const queryObject = url.parse(req.url, true).query;
     let realPath = url.parse(req.url, true).pathname
     if(realPath === '/login' && req.method === 'GET')
-    {   /*
-        todo : if I send correct password and email redirect me to profile with my name
-                if I send wrong password return, 400 in header with msg you entered wrong password
-                if I send wrong email, return 400 in header with msg you entered wrong email
-                If I send an email that doesn’t exist, return 400 headers with msg you entered email doesn’t exist please signup
-        */
+    {  
         let usersJSON = fs.readFileSync('./data.json','utf-8')
         let users = JSON.parse(usersJSON)
         const queryObject = url.parse(req.url, true).query;
-        //console.log("inside login " + queryObject.name)
-        res.writeHead(200)
-        res.write('Hello from login')
+        let found = users.find(function(user){
 
+            if(user.email==queryObject.email && user.password==queryObject.password)
+            {
+                res.writeHead(200,{
+                    'Location': '127.0.0.1:3000/profile'
+                    
+                })
+                res.write('Hello ' + user.name)
+                
+            }
+            else if(user.email==queryObject.email && user.password!=queryObject.password){
+                res.writeHead(400)
+                res.write('you entered wrong password')
+            }else if(user.email=!queryObject.email && user.password==queryObject.password){
+                res.writeHead(400)
+                res.write('you entered wrong email')
+            }else{
+                res.writeHead(400)
+                res.write('you entered email doesn’t exist please signup')
+            }
+        })
     }
     else if(realPath === '/signup' && req.method === 'POST')
     {
