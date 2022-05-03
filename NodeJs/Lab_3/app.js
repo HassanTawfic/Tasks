@@ -18,21 +18,17 @@ http.createServer(function (req, res){
 
                 })
                 res.write('Hello ' + user.name)
-                return 0;
                 
             }
             else if(user.email==queryObject.email && user.password!=queryObject.password){
                 res.writeHead(400)
                 res.write('you entered wrong password')
-                return 0;
             }else if(user.email=!queryObject.email && user.password==queryObject.password){
                 res.writeHead(400)
                 res.write('you entered wrong email')
-                return 0;
             }else{
                 res.writeHead(400)
                 res.write('you entered email does not exist please signup')
-                return 0;
             }
         })
     }
