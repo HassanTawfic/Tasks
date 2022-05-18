@@ -23,7 +23,8 @@
                 <label for="DepName" class="form-label">Department Name</label>
                 <input type="text" class="form-control" id="DepName" [(ngModel)]="currentDepName">
               </div>
-              <select [(ngModel)]="currentDepLocation" class="form-select mb-3" aria-label="">
+              <label for="select" class="form-label"></label>
+              <select [(ngModel)]="currentDepLocation" id='select' class="form-select mb-3" aria-label="">
                 <option *ngFor="let option of departmentOptions" [ngValue]="option">{{option}}</option>
               </select>
             </div>
