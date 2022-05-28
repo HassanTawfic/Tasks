@@ -4,8 +4,6 @@ import TableComponent from "./TableComponent";
 
 export default class Home extends Component{
 
-
-
     constructor(){
         super();
         this.state ={
@@ -32,7 +30,6 @@ export default class Home extends Component{
             age:0,
             name:""
         })
-        console.log(objectOfStudent)
 
     }
 
