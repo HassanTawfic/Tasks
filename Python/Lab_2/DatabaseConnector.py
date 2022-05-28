@@ -22,7 +22,8 @@ class DatabaseConnector:
 
     def terminate(self):
         if self.__connection.is_connected():
-            self.__connection.cursor.close()
+            cursor = self.__connection.cursor()
+            cursor.close()
             self.__connection.close()
             print("MySQL connection is closed")
 

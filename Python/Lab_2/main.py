@@ -11,7 +11,8 @@ def main():
     employee = Employee()
     flag = 1
     while flag == 1:
-        value = input("Please enter add to add a new employee:\n")
+        value = input("Please enter 'add' to add a new employee:\n"
+                      "or q to quit!")
         if value == 'add':
             print('if Employee is manager press 1\n')
             print('if Employee is not manager press 2\n')
