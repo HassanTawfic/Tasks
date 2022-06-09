@@ -1,0 +1,53 @@
+<p class="display-3 text-center mt-5">Lab3</p>
+<hr style="color: black;">
+<p class="display-4 text-center mt-2">Pipes</p>
+<p class="text-center fs-3">powerToX pipe eg: {{Products[0].rating|powerToX:3}}</p>
+<p class="text-center fs-3">StringConverter pipe before:
+  {{Products[0].productCode}} after: {{Products[0].productCode|stringConverter}}</p>
+<ul class="text-center fs-3">ArraySplice pipe on '1' =
+  <li *ngFor="let item of Products|arraySplicer:'1'">
+    {{item.productName}}
+  </li>
+ </ul>
+<ul class="text-center fs-3">ArraySplice pipe on 'pro' =
+  <li *ngFor="let item of Products|arraySplicer:'pro'">
+    {{item.productName}}
+  </li>
+</ul>
+<hr style="color: black;">
+<hr style="color: black;">
+<div class="d-flex align-items-center my-4">
+  <div>
+    <label for="search" class="form-label fs-4">Search:</label>
+    <input type="text" class="form-control" [(ngModel)]="search" id="search">
+  </div>
+  <div class="ms-auto">
+    <button class="btn btn-lg btn-primary">Add Product +</button>
+  </div>
+</div>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Product Name</th>
+    <th scope="col">Product Code</th>
+    <th scope="col">Date</th>
+    <th scope="col">Rating</th>
+    <th scope="col">Price</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of Products|arraySplicer:search; let ser=index">
+    <td>{{ser+1}}</td>
+    <td>{{item.productName}}</td>
+    <td>{{item.productCode|stringConverter}}</td>
+    <td>{{item.availability|date}}</td>
+    <td>
+      <app-rating [rating]=item.rating></app-rating>
+    </td>
+
+    <td>{{item.price|currency}}</td>
+  </tr>
+  </tbody>
+</table>
+

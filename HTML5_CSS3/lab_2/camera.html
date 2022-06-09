@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video id="myCam" autoplay width="300" height="300"></video>
+    <canvas id="showSnapShot"></canvas>
+    <img id="imgSnapShot"/>
+    <button onclick="takeSnapShot()">Capture</button>
+<script>
+    async function showCamera(){
+        if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
+            let stream = await navigator.mediaDevices.getUserMedia({video:true,audio:false});
+            myCam.srcObject = stream;
+        }
+    }
+    showCamera();
+    function takeSnapShot(){
+        showSnapShot.width = myCam.videoWidth;
+        showSnapShot.height = myCam.videoHeight;
+        let ctx = showSnapShot.getContext("2d");
+        ctx.drawImage(myCam,0,0);
+        let imgAsStr = showSnapShot.toDataURL("image/png");
+        localStorage.myImage = imgAsStr;
+        imgSnapShot.src = imgAsStr;
+    }
+
+    if(localStorage.myImage){
+        imgSnapShot.src=localStorage.myImage
+    }
+</script>
+</body>
+
+</html>

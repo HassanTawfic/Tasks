@@ -1,0 +1,22 @@
+{
+  "name": "weather/weather",
+  "description" : "Weatehr API using Guzzle",
+  "license": "MIT",
+
+  
+
+  "autoload":{
+  
+    "classmap":["Model"],
+    "files": ["conf.php"]
+	
+  
+  },
+
+	"require": {
+        "guzzlehttp/guzzle" : "*"
+    }
+  
+
+
+}

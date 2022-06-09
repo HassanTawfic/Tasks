@@ -1,0 +1,49 @@
+.header{
+    color: rgb(143, 189, 189);
+}
+.form{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    height: auto;
+}
+.Regular_input{
+    align-items: center;
+    display: flex;
+    align-items: center;
+    
+}
+.Regular_input label{
+    
+    padding: 8px 100px;
+    text-align: left;
+    background-color: rgb(143, 189, 189);
+    
+   
+}
+.Regular_input input{
+    
+    padding: 8px 15px;
+    margin-left: 3px;
+    
+   
+}
+.astreik{
+    color: red;
+}
+.paragraph{
+    margin-top: auto;
+    margin-bottom: 4px;
+    font-size: 18px;
+    background-color: rgb(143, 189, 189);
+    background-size: contain;
+    border: rgb(134, 30, 121) dashed;
+    size-adjust: auto;
+    padding-left: 5px;
+}
+.phone.phonea{
+    padding: 8px 100px;
+    text-align: left;
+    background-color: rgb(143, 189, 189);
+    
+}

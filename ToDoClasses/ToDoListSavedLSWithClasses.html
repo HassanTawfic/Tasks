@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List!</title>
+</head>
+<body>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+    
+        body{
+            background: linear-gradient(90deg, rgba(58,85,180,1) 0%, rgba(29,253,247,1) 50%, rgba(252,235,69,1) 100%);
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(66, 114, 44);
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            height: 60vh;
+            margin: 0;
+        }
+    
+        h1{
+            color:rgb(255, 255, 255);
+            font-size: 4rem;
+            text-align: center;
+            opacity: 0.7;
+            
+        }
+        form{
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            width: 400px; 
+        }
+        .input
+        {
+            border: none;
+            color: #444;
+            font-size: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            display: block;
+            width: 100%;
+        }
+        .input::placeholder
+        {
+            color: #d5d5d5
+        }
+        .input:focus{
+            outline-color: rgb(3, 143, 136)
+        }
+        .todos{
+            background: #fff;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+    
+        }
+        .todos li
+        {
+            border-top:1px solid #e5e5e5;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 1rem 2rem;
+        }
+        .todos li.completed
+        {
+            color: #b6b6b6;
+            text-decoration: line-through;
+        }
+        small{
+            color: #dbdbdb;
+            font-size: 1rem;
+            padding: 1rem;
+            text-align: center;
+            
+        }
+    </style>
+    <h1>To Do List!</h1>   
+    <form id="form">
+        <input type="text" class="input" id="input" placeholder="Enter Tasks!" autocomplete="off">
+        <ul class="todos" id="todos">
+            
+        </ul>
+    </form> 
+    <small>Left click to toggle completed <br>Right click to delete task!</small>
+</body>
+<script>
+    class todo{
+        constructor(text,c = false){
+            this.text = text;
+            this.c = c;
+
+        }
+
+    }
+    class todoList{
+
+        constructor(){
+            this.form = document.getElementById('form')
+            this.input = document.getElementById('input')
+            this.todosul = document.getElementById('todos')
+            this.todos = JSON.parse(localStorage.getItem('todos'))
+            this.todos = []
+
+            if (this.todos)
+            {
+                this.todos.forEach(todo => this.addTask(todo))
+            }
+
+            this.form.addEventListener('submit', (e)=> {
+                e.preventDefault()
+                this.addTask()
+            })
+
+            }
+
+
+            addTask(todo){
+            let todoText = this.input.value;
+            if(todo){
+
+                todoText = todo.text;
+            }
+
+            if(todoText)
+            {
+                const todoEl = document.createElement('li')
+                if(todo && todo.completed)
+                {todoEl.classList.add('completed')
+            }
+
+            todoEl.innerText = todoText
+
+            todoEl.addEventListener('click', () => {
+            todoEl.classList.toggle("completed")
+                this.updateLS();
+            })
+            todoEl.addEventListener('contextmenu', (e) => {
+            e.preventDefault()
+            todoEl.remove()
+            this.updateLS()
+            })
+
+            this.todosul.appendChild(todoEl)
+
+            this.input.value='';
+
+            updateLS()
+            }
+
+        }
+
+        updateLS()
+        {
+    const todosEl = document.querySelectorAll('li')
+    todosEl.forEach(todoEl =>{
+    this.todos.push({
+            text: todoEl.innerText,
+            completed: todoEl.classList.contains('completed')
+        })
+    })
+    localStorage.setItem('todos',JSON.stringify(this.todos))
+        }
+            
+      }
+      var s = new todoList();
+
+</script>
+</html>

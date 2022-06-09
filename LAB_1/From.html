@@ -1,0 +1,226 @@
+<doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form Layout</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 52%, rgba(0,212,255,1) 100%);
+    font-family: Cairo, Tahoma, sans-serif;
+}
+textarea {
+    resize: none;
+}
+.container  {
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 0;
+}
+.bg-gray {
+    background-color: rgb(255, 255, 255);
+}
+.asterisk {
+    color: red;
+
+}
+h1{
+    color: #fff;
+}
+
+.mb {
+    margin-bottom: 20px;
+}
+p {
+    border: 1px dashed;
+    padding: 3px;
+}
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    height: 36px;
+}
+.form-group > input, .form-group > select, .form-group > div, .form-group textarea {
+    width: 60%;
+}
+.form-group input, .form-group select {
+    height: 36px;
+}
+.form-group input, textarea, .form-group select {
+    margin-left: 5px;
+    border-radius: 3px;
+    padding: 5px;
+    border: 1px solid rgb(255, 255, 255);
+}
+.form-group label, .form-group div {
+    color: #777;
+}
+.form-group > label, .form-group > div:first-of-type {
+    width: 40%;
+    padding: 3px;
+}
+.form-group.phone-group > div:first-of-type, .form-group.address-group label {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.form-group > div {
+    display: flex;
+    align-items: flex-end;
+}
+.form-group.address-group {
+    height: 61px;
+}
+.form-group.phone-group {
+    align-items: flex-end;
+    height: 58px;
+}
+.form-group .separator {
+    margin: 0 5px;
+}
+.form-group > div div label {
+    margin-left: 10px;
+    font-size: 12px;
+}
+.terms, .buttons {
+    margin-left: calc(40% + 5px);
+}
+button {
+    border-radius: 3px;
+    padding: 5px 10px;
+    border: 1px solid #777777;
+    cursor: pointer;
+}
+button:hover {
+    box-shadow: 1px 1px 0px 0px #000;
+    background-color: white;
+}
+button[type=reset] {
+    margin-left: 20px;
+}
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="mb">Register - Create Account</h1>
+    <p class="bg-gray mb">Fields marked with <span class="asterisk">*</span> are compulsory fields</p>
+<form action="#" method="post">
+    <div class="form-group">
+        <label class="bg-gray" for="name">
+            <span class="asterisk">*</span>
+            Your name
+        </label>
+        <input placeholder="Name..." type="text" name="name" id="name" />
+    </div>
+    <div class="form-group">
+        <label class="bg-gray" for="email">
+            <span class="asterisk">*</span>
+            E-mail ID
+        </label>
+        <input placeholder="example@domain.com" type="email" name="email" id="email" />
+    </div>
+    <div class="form-group">
+        <label class="bg-gray" for="alt_email">
+            Alternative E-mail ID
+        </label>
+        <input placeholder="alternative@domain.com" type="email" name="alt_email" id="alt_email" />
+    </div>
+    <div class="form-group phone-group">
+        <div class="bg-gray">Your Phone</div>
+        <div class="phone-container">
+            <div>
+                <label for="countryCode">
+                    Country Code
+                </label>
+                <input type="number" name="counterCode" id="countryCode">
+            </div>
+            <div class="separator">-</div>
+            <div>
+                <label for="cityCode">
+                    City Code
+                </label>
+                <input type="number" name="cityCode" id="cityCode">
+            </div>
+            <div class="separator">-</div>
+            <div>
+                <label for="phone">
+                    Phone Number
+                </label>
+                <input type="number" name="phone" id="phone">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="bg-gray" for="mobilePhone">
+            Mobile Phone
+        </label>
+        <input type="number" name="mobilePhone" id="mobilePhone">
+    </div>
+    <div class="form-group address-group">
+        <label class="bg-gray" for="address">
+            <span class="asterisk">*</span>
+            Your Postal Address
+        </label>
+        <textarea name="address" id="address" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+        <label class="bg-gray" for="country">
+            <span class="asterisk">*</span>
+            Country
+        </label>
+        <select id="country">
+            <option value="" selected disabled>
+                ---------- Select One ----------
+            </option>
+            <option value="eg">
+                Egypt
+            </option>
+            <option value="uk">
+                United Kingdom
+            </option>
+            <option value="us">
+                United States
+            </option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label class="bg-gray" for="password">
+            <span class="asterisk">*</span>
+            Password
+        </label>
+        <input type="password" name="password" id="password" />
+    </div>
+    <div class="form-group">
+        <label class="bg-gray" for="confirmPassword">
+            <span class="asterisk">*</span>
+            Re - Enter Password
+        </label>
+        <input type="password" name="confirmPassword" id="confirmPassword" />
+    </div>
+    <div class="terms">
+        <label for="terms">
+            <input type="checkbox" name="terms" id="terms" />
+            I accept the <a href="https://www.google.com" target="_blank">Terms of Use</a>
+        </label>
+    </div>
+    <div class="buttons">
+        <button type="submit">
+            Continue > >
+        </button>
+        <button type="reset">
+            Reset
+        </button>
+    </div>
+</form>
+</div>
+</body>
+</html>

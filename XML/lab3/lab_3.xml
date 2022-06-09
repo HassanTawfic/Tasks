@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<company>
+    <employee>
+<companyName>ITI</companyName>
+        <name>
+            <fname>Hassan</fname>
+            <lname>Tawfic</lname>
+        </name>
+        <phones>
+            <phoneMobile>+01000000232</phoneMobile>
+            <phoneHome>+0346546546654</phoneHome>
+            <phoneWork>+01000000232</phoneWork>
+        </phones>
+        <addresses>
+            <address1>
+                <street>
+                    El-Sheikh Muhamed Abdou
+                </street>
+                <buildingNumber>21</buildingNumber>
+                <region>Bahary</region>
+                <city>Alexandria</city>
+                <country>Egypt</country>
+            </address1>
+            <address2>
+                <street>other street</street>
+                <buildingNumber>#</buildingNumber>
+                <region>other</region>
+                <city>Alexandria</city>
+                <country>Egypt</country>
+            </address2>
+        </addresses>
+        <email email="b1">hatawfic@gmail.com</email>
+
+    </employee>
+</company>

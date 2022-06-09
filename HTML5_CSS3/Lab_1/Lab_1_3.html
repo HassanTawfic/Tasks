@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>Number of visits: <span id="visits"></span>  </h1>
+    <script>
+        const visits = document.getElementById('visits');
+        const x = localStorage.getItem('visits') ? localStorage.getItem('visits') : 0;
+        let z = parseInt(x)+1;
+        visits.textContent = z;
+        localStorage.setItem('visits',z);
+
+    </script>
+    
+</body>
+</html>
