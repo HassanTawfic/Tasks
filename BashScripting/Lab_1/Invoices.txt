@@ -1,5 +1,0 @@
-Product 1:130
-Product 2:150
-Product 3:190
-Product 4:250
-Product 5:399

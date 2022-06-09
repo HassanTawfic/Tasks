@@ -1,4 +1,0 @@
-1 banana 50 2
-1 apple 40 1
-2 milk 40 1
-2 apple 40 1
