@@ -1,0 +1,102 @@
+{
+  "Students": [
+    {
+      "id": 2,
+      "first_name": "Stanford",
+      "last_name": "Frankiewicz",
+      "email": "sfrankiewicz1@miitbeian.gov.cn",
+      "gender": "Male"
+    },
+    {
+      "id": 3,
+      "first_name": "Reider",
+      "last_name": "Lillistone",
+      "email": "rlillistone2@eepurl.com",
+      "gender": "Male"
+    },
+    {
+      "id": 4,
+      "first_name": "Man",
+      "last_name": "Dudeney",
+      "email": "mdudeney3@amazon.co.uk",
+      "gender": "Male"
+    },
+    {
+      "id": 5,
+      "first_name": "Zuzana",
+      "last_name": "Sussems",
+      "email": "zsussems4@flavors.me",
+      "gender": "Female"
+    },
+    {
+      "id": 6,
+      "first_name": "Michel",
+      "last_name": "Arendt",
+      "email": "marendt5@lulu.com",
+      "gender": "Male"
+    },
+    {
+      "id": 7,
+      "first_name": "Jeremie",
+      "last_name": "Ayers",
+      "email": "jayers6@printfriendly.com",
+      "gender": "Male"
+    },
+    {
+      "id": 8,
+      "first_name": "Pepito",
+      "last_name": "Besemer",
+      "email": "pbesemer7@stanford.edu",
+      "gender": "Male"
+    },
+    {
+      "id": 9,
+      "first_name": "Wain",
+      "last_name": "Burkett",
+      "email": "wburkett8@t.co",
+      "gender": "Male"
+    },
+    {
+      "id": 10,
+      "first_name": "Norris",
+      "last_name": "Stockney",
+      "email": "nstockney9@un.org",
+      "gender": "Male"
+    },
+    {
+      "id": 11,
+      "first_name": "Caro",
+      "last_name": "Grooby",
+      "email": "cgroobya@nifty.com",
+      "gender": "Female"
+    },
+    {
+      "id": 12,
+      "first_name": "Corrine",
+      "last_name": "Pickthorne",
+      "email": "cpickthorneb@linkedin.com",
+      "gender": "Female"
+    },
+    {
+      "id": 13,
+      "first_name": "Stephen",
+      "last_name": "Fothergill",
+      "email": "sfothergillc@wikimedia.org",
+      "gender": "Male"
+    },
+    {
+      "id": 14,
+      "first_name": "Irvine",
+      "last_name": "Shillan",
+      "email": "ishilland@google.ru",
+      "gender": "Male"
+    },
+    {
+      "id": 15,
+      "first_name": "Mela",
+      "last_name": "Juanico",
+      "email": "mjuanicoe@cargocollective.com",
+      "gender": "Female"
+    }
+  ]
+}
